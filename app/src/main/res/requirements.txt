@@ -1,0 +1,30 @@
+1. Architecture
+    MVC Pattern:
+        Model class
+        Controller (Java)
+        and View (XML).
+2. API Level
+    Minimum: API 24+
+    Target: Latest available (API 34+)
+3. Activities & Layouts
+    Two Activities:
+        Both support Portrait and Landscape.
+    a) Main Activity:
+        ActionBar/ToolBar with "hamburger" menu.
+        Menu Items: Settings and About.
+    b) Second Activity:
+        ActionBar/ToolBar with back button.
+4. Layout Features
+    At least one layout uses CoordinatorLayout with Snackbar or FAB.
+5. Lifecycle
+    State Management:
+        Save/restore state on screen rotation.
+6. Preferences
+    Preferences:
+        Menu items (e.g., Auto-Save) or a full Preferences Activity.
+7. About Screen
+    About:
+        Launch new Activity or use AlertDialog.
+8. Customization
+    Launcher Icon: Custom icon.
+    Colors: Custom colors.

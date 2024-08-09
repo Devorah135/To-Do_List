@@ -4,19 +4,18 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
 import com.example.todo_list.databinding.ActivityMainBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -27,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    private ArrayList<String> items;
     private ListView list;
-    private FloatingActionButton button;
-    private ArrayAdapter<String> itemsAdapter;
+    private FloatingActionButton fab_add_item;
+    private ArrayAdapter<String> tasksAdapter;
+
+    private TaskModel taskModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +41,35 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        list = findViewById(R.id.list);
-        button = findViewById(R.id.fab);
+        taskModel = new TaskModel();
 
-        button.setOnClickListener(new View.OnClickListener() {
+        setupList();
+    }
+
+    private void setupList() {
+        list = findViewById(R.id.list);
+        fab_add_item = findViewById(R.id.fab);
+
+        // Clicking the fab adds an item by calling additem() method
+        setupFAB();
+
+        tasksAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, taskModel.getTasks());
+        list.setAdapter(tasksAdapter);
+
+        deleteOnLongClick();
+    }
+
+    private void setupFAB() {
+        fab_add_item.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                additem(v);
+            public void onClick(View view) {
+                additem(view);
+                Snackbar.make(view, "Item added to list.", Snackbar.LENGTH_SHORT).show();
             }
         });
-        items = new ArrayList<>();
-        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
-        list.setAdapter(itemsAdapter);
+    }
+
+    private void deleteOnLongClick() {
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -61,25 +78,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private boolean remove(int position) {
-        Context context = getApplicationContext();
-        Toast.makeText(context, "Item Removed", Toast.LENGTH_LONG).show();
-        items.remove(position);
-        itemsAdapter.notifyDataSetChanged();
-        return true;
-    }
-
     private void additem(View view) {
         EditText input = findViewById(R.id.edit_text);
-        String itemText = input.getText().toString();
+        String inputText = input.getText().toString();
 
-        if (!(itemText.equals(""))){
-            itemsAdapter.add(itemText);
-            input.setText("");
+        if (!(inputText.equals(""))){
+            taskModel.addTask(inputText);
+            tasksAdapter.notifyDataSetChanged();
+            input.setText(""); // set the edit text back to empty
         }
         else {
             Toast.makeText(getApplicationContext(), "Please enter text.", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private boolean remove(int position) {
+        Context context = getApplicationContext();
+        Toast.makeText(context, "Item Removed", Toast.LENGTH_LONG).show();
+        taskModel.removeTask(position);
+        tasksAdapter.notifyDataSetChanged();
+        return true;
     }
 
     @Override
