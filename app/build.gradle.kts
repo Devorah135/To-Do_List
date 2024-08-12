@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.preference)
     implementation(libs.gson)
+    implementation(libs.constraintlayout.core)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
