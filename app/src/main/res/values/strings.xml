@@ -25,4 +25,8 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="night_mode_key">Night Mode</string>
+    <string name="auto_save_key">Auto Save\n</string>
+    <string name="about_message">A to-do list created by Ilana Renov and Devorah Schonkopf for MCON 255 term project.</string>
+    <string name="about_title">About To-Do List</string>
+    <string name="list_key">list key</string>
 </resources>
