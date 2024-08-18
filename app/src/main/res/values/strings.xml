@@ -37,4 +37,5 @@
     <string name="auto_save_off">Do not save list on exit</string>
     <string name="auto_save_on">Automatically save list on exit</string>
     <string name="auto_save_title">Auto-Save list on exit</string>
+    <string name="remove_instructions">Long click a task to remove it from list</string>
 </resources>

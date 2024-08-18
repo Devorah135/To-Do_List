@@ -25,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private ListView list;
-    private FloatingActionButton fab_add_item;
+    private Button fab_add_item;
     private ArrayAdapter<String> tasksAdapter;
     private TaskModel taskModel;
     private Snackbar mSnackBar;
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupList() {
         list = findViewById(R.id.list);
-        fab_add_item = findViewById(R.id.fab);
+        fab_add_item = findViewById(R.id.add_button);
 
         // Clicking the fab adds an item by calling additem() method
         setupFAB();
@@ -118,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 additem(view);
-                Snackbar.make(view, "Item added to list.", Snackbar.LENGTH_SHORT).show();
             }
         });
     }
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             taskModel.addTask(inputText);
             tasksAdapter.notifyDataSetChanged();
             input.setText(""); // set the edit text back to empty
+            Snackbar.make(view, "Item added to list.", Snackbar.LENGTH_SHORT).show();
         } else {
             Toast.makeText(getApplicationContext(), "Please enter text.", Toast.LENGTH_LONG).show();
         }

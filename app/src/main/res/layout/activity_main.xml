@@ -16,6 +16,17 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
+        <TextView
+            android:id="@+id/instructions_remove"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/remove_instructions"
+            android:textAppearance="@style/TextAppearance.Material3.ActionBar.Subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/add_button"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
