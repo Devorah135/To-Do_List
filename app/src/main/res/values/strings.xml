@@ -29,4 +29,12 @@
     <string name="about_message">A to-do list created by Ilana Renov and Devorah Schonkopf for MCON 255 term project.</string>
     <string name="about_title">About To-Do List</string>
     <string name="list_key">list key</string>
+    <string name="display_header">Display</string>
+    <string name="night_mode_off">Night mode will be disabled on the app</string>
+    <string name="night_mode_on">Night mode will be enabled according to system settings.</string>
+    <string name="night_mode_title">Night Mode</string>
+    <string name="app_header">App</string>
+    <string name="auto_save_off">Do not save list on exit</string>
+    <string name="auto_save_on">Automatically save list on exit</string>
+    <string name="auto_save_title">Auto-Save list on exit</string>
 </resources>
