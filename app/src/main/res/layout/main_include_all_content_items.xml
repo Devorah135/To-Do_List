@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/content_main">
+
+    <include layout="@layout/main_include_instruction_bar" />
+
+    <include layout="@layout/main_include_enter_text_and_add_button" />
+
+    <include layout="@layout/main_include_list" />
+
+</merge>

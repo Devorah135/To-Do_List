@@ -7,29 +7,8 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-        <TextView
-            android:id="@+id/instructions_remove"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:text="@string/remove_instructions"
-            android:textAppearance="@style/TextAppearance.Material3.ActionBar.Subtitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/add_button"/>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
+    <include layout="@layout/main_include_toolbar" />
     <include layout="@layout/content_main" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

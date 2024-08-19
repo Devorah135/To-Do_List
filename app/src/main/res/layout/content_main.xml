@@ -1,47 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/fab_margin"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="@layout/activity_main"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:layout_margin="@dimen/standard_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main">
 
-    <include layout="@layout/enter_text"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintBottom_toTopOf="@id/list"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add_button"
-        />
-
-    <Button
-        android:id="@+id/add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:drawableRight="@android:drawable/ic_menu_add"
-        android:minWidth="0dp"
-        android:minHeight="0dp"
-        android:padding="8dp"
-        android:text="Add item"
-        app:layout_constraintBottom_toBottomOf="@id/edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/edit_text"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/enter_text"
-        android:layout_marginBottom="12dp"
-        />
-
-    <TextView
-        android:id="@+id/action_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+    <include layout="@layout/main_include_all_content_items" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

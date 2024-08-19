@@ -3,23 +3,17 @@
 <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/enter_text"
+    android:id="@+id/top_bar"
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize"
     android:gravity="center"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:showIn="@layout/content_main">
+    tools:showIn="@layout/main_include_all_content_items">
 
-    <EditText
-        android:id="@+id/edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:hint="Enter item"
-        android:layout_gravity="start"
-        android:minEms="12"
-        />
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
 
 </com.google.android.material.appbar.AppBarLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enter_text"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    app:layout_constraintTop_toBottomOf="@+id/top_bar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/add_button"
+    android:gravity="center"
+    tools:showIn="@layout/content_main">
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:hint="Enter item"
+        android:layout_gravity="start"
+        android:minEms="12"
+        />
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:layout_gravity="end"
+        android:drawableRight="@android:drawable/ic_menu_add"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:padding="8dp"
+        android:text="Add item"
+        app:layout_constraintBottom_toBottomOf="@id/edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edit_text"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</com.google.android.material.card.MaterialCardView>
