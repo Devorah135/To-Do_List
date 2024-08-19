@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".4" />
+        app:layout_constraintGuide_percent=".5" />
 
     <include
         android:id="@+id/top_bar"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/top_bar" />
 
     <include
-        android:id="@+id/list"
+        android:id="@+id/include_list"
         layout="@layout/main_include_list"
         android:layout_width="0dp"
         android:layout_height="0dp"

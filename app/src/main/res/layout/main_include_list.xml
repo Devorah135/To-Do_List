@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/include_list"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/standard_margin"
+    app:layout_constraintTop_toBottomOf="@id/enter_text"
     tools:showIn="@layout/content_main">
 
     <ListView
         android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/enter_text"
-        android:layout_marginBottom="12dp" />
-
-    <TextView
-        android:id="@+id/action_about"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
-</merge>
+        android:layout_height="wrap_content" />
+</com.google.android.material.card.MaterialCardView>

@@ -38,4 +38,6 @@
     <string name="auto_save_on">Automatically save list on exit</string>
     <string name="auto_save_title">Auto-Save list on exit</string>
     <string name="remove_instructions">Long click a task to remove it from list</string>
+    <string name="hint">Enter item</string>
+    <string name="add_item">Add item</string>
 </resources>
