@@ -9,12 +9,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -30,7 +27,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private ListView list;
-    private Button fab_add_item;
+    private Button add_item_btn;
     private ArrayAdapter<String> tasksAdapter;
     private TaskModel taskModel;
     private Snackbar mSnackBar;
@@ -105,10 +101,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupList() {
         list = findViewById(R.id.list);
-        fab_add_item = findViewById(R.id.add_button);
+        add_item_btn = findViewById(R.id.add_button);
 
         // Clicking the fab adds an item by calling additem() method
-        setupFAB();
+        setupBtn();
 
         tasksAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, taskModel.getTasks());
         list.setAdapter(tasksAdapter);
@@ -116,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
         deleteOnLongClick();
     }
 
-    private void setupFAB() {
-        fab_add_item.setOnClickListener(new View.OnClickListener() {
+    private void setupBtn() {
+        add_item_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 additem(view);
@@ -150,9 +146,9 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean remove(int position) {
         Context context = getApplicationContext();
-        Toast.makeText(context, "Item Removed", Toast.LENGTH_LONG).show();
         taskModel.removeTask(position);
         tasksAdapter.notifyDataSetChanged();
+        Toast.makeText(context, "Item Removed", Toast.LENGTH_LONG).show();
         return true;
     }
 
